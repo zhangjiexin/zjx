@@ -130,6 +130,8 @@ void* find_thread(void* arg)
 }
 
 
+
+
 int main()
 {
 	/*Mat mapx,mapy;
@@ -246,7 +248,6 @@ int main()
 				cout<<">>----------跟踪成功----------<<" << endl;
 				center_x += center.x;
 				center_y += center.y;
-				
 				++row;
 			}
 		}

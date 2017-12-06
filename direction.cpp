@@ -154,7 +154,9 @@ bool direction::trackDirection(const Mat& src,double theta,Point2f& center,Mat& 
 	}
 
 	//**颜色空间转化**//
-	Point2f offset = trackBox[0].tl();
+	
+	Point2f offset = trackBox[0].tl();//Rect.tl()取得左上角的点坐标
+
 	Mat hsv = src(trackBox[0]).clone();
 #if debug_trackDirection
 	//imshow("trackBox",hsv);
@@ -320,7 +322,8 @@ bool direction::splitDirection(const Mat& src,vector<Scalar>& colors,vector<Mat>
 //|		 3、方向标颜色（HSV）	  |//
 //|输出：各个方向标5个的角点	  |//
 //\-------------------------------///
-bool direction::getCornerPoint(Mat& src,vector<Rect>& rect,vector<vector<Point2f> >& keypoints,double c)
+bool direction::getCornerPoint(Mat& src,vector<Rect>& rect,\
+                                vector<vector<Point2f>>& keypoints,double c)
 {
 #define debug_getCornerPoint_cout 0
 #define debug_getCornerPoint_show 1
